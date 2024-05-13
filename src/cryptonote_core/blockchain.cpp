@@ -303,7 +303,7 @@ bool Blockchain::init(BlockchainDB *db, const network_type nettype, bool offline
 	CRITICAL_REGION_LOCAL(m_tx_pool);
 	CRITICAL_REGION_LOCAL1(m_blockchain_lock);
 
-	memcpy(m_dev_view_key.data, common_config::DEV_FUND_VIEWKEY, 32);
+	//memcpy(m_dev_view_key.data, common_config::DEV_FUND_VIEWKEY, 32);
 	
 	address_parse_info dev_addr;
 	if(!get_account_address_from_str<MAINNET>(dev_addr, std::string(common_config::DEV_FUND_ADDRESS)))
