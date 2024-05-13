@@ -29,16 +29,16 @@
 #define CRYPTONOTE_GETBLOCKTEMPLATE_MAX_BLOCK_SIZE 196608 //size of block (bytes) that is the maximum that miners will produce
 #define CRYPTONOTE_PUBLIC_ADDRESS_TEXTBLOB_VER 0
 #define CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW 60
-#define CURRENT_TRANSACTION_VERSION 3
-#define MIN_TRANSACTION_VERSION 2
+#define CURRENT_TRANSACTION_VERSION 1
+#define MIN_TRANSACTION_VERSION 1
 #define MAX_TRANSACTION_VERSION 3
 #define CRYPTONOTE_DEFAULT_TX_SPENDABLE_AGE 10
 
 // MONEY_SUPPLY - total number coins to be generated
-#define MONEY_SUPPLY ((uint64_t)88888888000000000)
+#define MONEY_SUPPLY ((uint64_t)88888888000000000) //88m coins in atomic units
 #define EMISSION_SPEED_FACTOR 19
 #define FINAL_SUBSIDY ((uint64_t)4000000000)			  // 4 * pow(10, 9)
-#define GENESIS_BLOCK_REWARD ((uint64_t)8800000000000000) // ~10% dev premine, now  mostly burned
+#define GENESIS_BLOCK_REWARD ((uint64_t)0) // 0 premine
 #define EMISSION_SPEED_FACTOR_PER_MINUTE (20)
 
 #define CRYPTONOTE_REWARD_BLOCKS_WINDOW 60
@@ -83,7 +83,7 @@
 
 #define ALLOW_DEBUG_COMMANDS
 
-#define CRYPTONOTE_NAME "ryo"
+#define CRYPTONOTE_NAME "xpos"
 #define CRYPTONOTE_POOLDATA_FILENAME "poolstate.bin"
 #define CRYPTONOTE_BLOCKCHAINDATA_FILENAME "data.mdb"
 #define CRYPTONOTE_BLOCKCHAINDATA_LOCK_FILENAME "lock.mdb"
@@ -104,7 +104,7 @@
 #define PEAK_COIN_EMISSION_YEAR 4
 #define PEAK_COIN_EMISSION_HEIGHT ((uint64_t)(((12 * 30.4375 * 24 * 3600) / common_config::DIFFICULTY_TARGET) * PEAK_COIN_EMISSION_YEAR)) // = (# of heights emmitted per year) * PEAK_COIN_EMISSION_YEAR
 
-#define TX_FORK_ID_STR "ryo-currency"
+#define TX_FORK_ID_STR "xposed"
 
 template <typename T, std::size_t N>
 constexpr std::size_t countof(T const (&)[N]) noexcept
@@ -186,7 +186,7 @@ struct common_config
 	static constexpr uint64_t POISSON_CHECK_DEPTH = 60;   // Main-chain depth of the poisson check. The attacker will have to tamper 50% of those blocks
 	static constexpr double POISSON_LOG_P_REJECT = -75.0; // Reject reorg if the probablity that the timestamps are genuine is below e^x, -75 = 10^-33
 
-	static constexpr uint64_t DIFFICULTY_TARGET = 240; // 4 minutes
+	static constexpr uint64_t DIFFICULTY_TARGET = 120; // 2 minutes
 
 	/////////////// V1 difficulty constants
 	static constexpr uint64_t DIFFICULTY_WINDOW_V1 = 720; // blocks
@@ -227,13 +227,13 @@ struct common_config
 
 	///////////////// Dev fund constants
 	// 2 out of 3 multisig address held by fireice, mosu, and psychocrypt
-	static constexpr const char* DEV_FUND_ADDRESS = "RYoLshTYzNEaizPi9jWtRtNPtan5fAqc3TVbyzZDWghLY99eXivKD1XQMseVyJQ1kD5FXDvk4nHqpUXBTMCm5aqmQU8tHaN51Wc";
+	static constexpr const char* DEV_FUND_ADDRESS = "";
 	// 34d6b7155d99da44c3a73424c60ecb0da53d228ed8da026df00ed275ea54e803
-	static constexpr const char* DEV_FUND_VIEWKEY = "\x34\xd6\xb7\x15\x5d\x99\xda\x44\xc3\xa7\x34\x24\xc6\x0e\xcb\x0d\xa5\x3d\x22\x8e\xd8\xda\x02\x6d\xf0\x0e\xd2\x75\xea\x54\xe8\x03";
+	static constexpr const char* DEV_FUND_VIEWKEY = "";
 	// Exact number of coins burned in the premine burn, in atomic units
-	static constexpr uint64_t PREMINE_BURN_AMOUNT = 8700051446427001;
+	static constexpr uint64_t PREMINE_BURN_AMOUNT = 0;
 	// Ryo donation address
-	static constexpr const char* RYO_DONATION_ADDR = "RYoLshssqU9WvHMwAmt4j6dtpgRERDqwzSiHF4V9nEb5YWmQ5pLSkJC9QudNseKrxBacKtQuLWhpSQ6GLXgyDWjKAGjNXH72VDJ";
+	static constexpr const char* RYO_DONATION_ADDR = "";
 };
 
 template <network_type type>
@@ -254,9 +254,9 @@ struct config<MAINNET>
 	static constexpr uint64_t RYO_LONG_INTEGRATED_ADDRESS_BASE58_PREFIX = 0x2de192; // RYoN
 	static constexpr uint64_t RYO_LONG_SUBADDRESS_BASE58_PREFIX = 0x2fe192;			// RYoS
 
-	static constexpr uint16_t P2P_DEFAULT_PORT = 12210;
-	static constexpr uint16_t RPC_DEFAULT_PORT = 12211;
-	static constexpr uint16_t ZMQ_RPC_DEFAULT_PORT = 12212;
+	static constexpr uint16_t P2P_DEFAULT_PORT = 22210;
+	static constexpr uint16_t RPC_DEFAULT_PORT = 22220;
+	static constexpr uint16_t ZMQ_RPC_DEFAULT_PORT = 32222;
 
 	//Random UUID generated from radioactive cs-137 ( http://www.fourmilab.ch/hotbits/how3.html ) it gives me a nice warm feeling =) 
 	static constexpr boost::uuids::uuid NETWORK_ID = { { 0xcd, 0xac, 0x50, 0x2e, 0xb3, 0x74, 0x8f, 0xf2, 0x0f, 0xb7, 0x72, 0x18, 0x0f, 0x73, 0x24, 0x13 } }; 
@@ -286,9 +286,9 @@ struct config<TESTNET>
 	static constexpr uint64_t RYO_LONG_INTEGRATED_ADDRESS_BASE58_PREFIX = 0x29e192; // RYoE
 	static constexpr uint64_t RYO_LONG_SUBADDRESS_BASE58_PREFIX = 0x30e192;			// RYoU
 
-	static constexpr uint16_t P2P_DEFAULT_PORT = 13310; 
-	static constexpr uint16_t RPC_DEFAULT_PORT = 13311; 
-	static constexpr uint16_t ZMQ_RPC_DEFAULT_PORT = 13312; 
+	static constexpr uint16_t P2P_DEFAULT_PORT = 23310; 
+	static constexpr uint16_t RPC_DEFAULT_PORT = 23320; 
+	static constexpr uint16_t ZMQ_RPC_DEFAULT_PORT = 23333; 
  
 	static constexpr boost::uuids::uuid NETWORK_ID = { { 0x6f, 0x81, 0x7d, 0x7e, 0xa2, 0x0b, 0x71, 0x77, 0x22, 0xc8, 0xd2, 0xff, 0x02, 0x5d, 0xe9, 0x92 } }; 
 
@@ -317,9 +317,9 @@ struct config<STAGENET>
 	static constexpr uint64_t RYO_LONG_INTEGRATED_ADDRESS_BASE58_PREFIX = 0x1fbbe192; // RYosE
 	static constexpr uint64_t RYO_LONG_SUBADDRESS_BASE58_PREFIX = 0xe3c2192;		  // RYosU
 
-	static constexpr uint16_t P2P_DEFAULT_PORT = 14410; 
-	static constexpr uint16_t RPC_DEFAULT_PORT = 14411; 
-	static constexpr uint16_t ZMQ_RPC_DEFAULT_PORT = 14412; 
+	static constexpr uint16_t P2P_DEFAULT_PORT = 24440; 
+	static constexpr uint16_t RPC_DEFAULT_PORT = 24444; 
+	static constexpr uint16_t ZMQ_RPC_DEFAULT_PORT = 34444; 
  
 	static constexpr boost::uuids::uuid NETWORK_ID = { { 0x15, 0x77, 0x3a, 0x26, 0x42, 0xa0, 0x3f, 0xf3, 0xe5, 0x79, 0x72, 0x8d, 0x4e, 0x5a, 0xf2, 0x98 } }; 
 
