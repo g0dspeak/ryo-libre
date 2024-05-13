@@ -231,7 +231,7 @@ struct common_config
 	// 34d6b7155d99da44c3a73424c60ecb0da53d228ed8da026df00ed275ea54e803
 	static constexpr const char* DEV_FUND_VIEWKEY = "8ae303b001aff92ed3c5cc8d499c82c5b58d3a4e6f9f7212808e616d5076850a";
 	// Exact number of coins burned in the premine burn, in atomic units
-	static constexpr uint64_t PREMINE_BURN_AMOUNT = 0;
+	static constexpr uint64_t PREMINE_BURN_AMOUNT = 1;
 	// Ryo donation address
 	static constexpr const char* RYO_DONATION_ADDR = "RYoLsiXYpuuDdf4dGNbrbZhfVYNjFTMf9CWCRwxykHx6Ahtaw5Vn5uyC59j1FqG8woi8NhBi8rNbdRmD3L81hBgMUB8ckv4t1JM";
 };
