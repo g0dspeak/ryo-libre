@@ -127,8 +127,8 @@ enum network_type : uint8_t
 enum hard_fork_feature
 {
 	FORK_POW_CN_HEAVY,
-	FORK_POW_CN_GPU,
-	FORK_V2_DIFFICULTY,
+	FORK_POW_CN_GPU
+	/*FORK_V2_DIFFICULTY,
 	FORK_V3_DIFFICULTY,
 	FORK_V4_DIFFICULTY,
 	FORK_FIXED_FEE,
@@ -142,6 +142,7 @@ enum hard_fork_feature
 	FORK_FEE_V2,
 	FORK_UNIFORM_IDS,
 	FORK_UNIFORM_IDS_REQ
+	*/
 };
 
 struct hardfork_conf
@@ -156,8 +157,8 @@ struct hardfork_conf
 
 static constexpr hardfork_conf FORK_CONFIG[] = {
 	{FORK_POW_CN_HEAVY, 3, 3, 1},
-	{FORK_POW_CN_GPU, 6, 9, 1},
-	{FORK_V2_DIFFICULTY, 2, 2, 1},
+	{FORK_POW_CN_GPU, 0, 0, 1}
+	/*{FORK_V2_DIFFICULTY, 2, 2, 1},
 	{FORK_V3_DIFFICULTY, 4, 4, 1},
 	{FORK_V4_DIFFICULTY, 6, 9, 1},
 	{FORK_FIXED_FEE, 4, 4, 1},
@@ -171,6 +172,8 @@ static constexpr hardfork_conf FORK_CONFIG[] = {
 	{FORK_BULLETPROOFS_REQ, 7, 9, 1},
 	{FORK_UNIFORM_IDS, 6, 7, 1},
 	{FORK_UNIFORM_IDS_REQ, 7, 8, 1}
+
+	*/
 	
 };
 
