@@ -127,8 +127,8 @@ enum network_type : uint8_t
 enum hard_fork_feature
 {
 	FORK_POW_CN_HEAVY,
-	FORK_POW_CN_GPU
-	/*FORK_V2_DIFFICULTY,
+	FORK_POW_CN_GPU,
+	FORK_V2_DIFFICULTY,
 	FORK_V3_DIFFICULTY,
 	FORK_V4_DIFFICULTY,
 	FORK_FIXED_FEE,
@@ -142,7 +142,6 @@ enum hard_fork_feature
 	FORK_FEE_V2,
 	FORK_UNIFORM_IDS,
 	FORK_UNIFORM_IDS_REQ
-	*/
 };
 
 struct hardfork_conf
@@ -156,24 +155,24 @@ struct hardfork_conf
 };
 
 static constexpr hardfork_conf FORK_CONFIG[] = {
-	{FORK_POW_CN_HEAVY, 3, 3, 1},
-	{FORK_POW_CN_GPU, 0, 0, 1}
-	/*{FORK_V2_DIFFICULTY, 2, 2, 1},
-	{FORK_V3_DIFFICULTY, 4, 4, 1},
-	{FORK_V4_DIFFICULTY, 6, 9, 1},
-	{FORK_FIXED_FEE, 4, 4, 1},
-	{FORK_NEED_V3_TXES, 4, 4, 1},
-	{FORK_STRICT_TX_SEMANTICS, 5, 5, 1},
-	{FORK_DEV_FUND, 5, 5, 1},
-	{FORK_FEE_V2, 5, 6, 1},
-	{FORK_RINGSIZE_INC, 6, 8, 1},
-	{FORK_RINGSIZE_INC_REQ, 7, 9, 1},
-	{FORK_BULLETPROOFS, 6, 8, 1},
-	{FORK_BULLETPROOFS_REQ, 7, 9, 1},
-	{FORK_UNIFORM_IDS, 6, 7, 1},
-	{FORK_UNIFORM_IDS_REQ, 7, 8, 1}
+	{FORK_POW_CN_HEAVY, 0, 0, 0},
+	{FORK_POW_CN_GPU, 0, 0, 1},
+	{FORK_V2_DIFFICULTY, 0, 0, 1},
+	{FORK_V3_DIFFICULTY, 0, 0, 1},
+	{FORK_V4_DIFFICULTY, 0, 0, 1},
+	{FORK_FIXED_FEE, 0, 0, 1},
+	{FORK_NEED_V3_TXES, 0, 0, 1},
+	{FORK_STRICT_TX_SEMANTICS, 0, 0, 1},
+	{FORK_DEV_FUND, 0, 0, 1},
+	{FORK_FEE_V2, 0, 0, 1},
+	{FORK_RINGSIZE_INC, 0, 0, 1},
+	{FORK_RINGSIZE_INC_REQ, 0, 0, 1},
+	{FORK_BULLETPROOFS, 0, 0, 1},
+	{FORK_BULLETPROOFS_REQ, 0, 0, 1},
+	{FORK_UNIFORM_IDS, 0, 0, 1},
+	{FORK_UNIFORM_IDS_REQ, 0, 0, 1}
 
-	*/
+	
 	
 };
 
@@ -266,8 +265,8 @@ struct config<MAINNET>
 	static constexpr boost::uuids::uuid NETWORK_ID = { { 0xcd, 0xac, 0x50, 0x2e, 0xb3, 0x74, 0x8f, 0xf2, 0x0f, 0xb7, 0x72, 0x18, 0x0f, 0x73, 0x24, 0x13 } }; 
 
 	static constexpr const char *GENESIS_TX =
-		"";
-	static constexpr uint32_t GENESIS_NONCE = 0;
+		"023c01ff0001808098d0daf1d00f028be379aa57a70fa19c0ee5765fdc3d2aae0b1034158f4963e157d9042c24fbec21013402fc7071230f1f86f33099119105a7b1f64a898526060ab871e685059c223100";
+	static constexpr uint32_t GENESIS_NONCE = 10000;
 
 	////////////////////// Dev fund constants
 	// How ofen do we add the dev reward
@@ -297,8 +296,8 @@ struct config<TESTNET>
 	static constexpr boost::uuids::uuid NETWORK_ID = { { 0x6f, 0x81, 0x7d, 0x7e, 0xa2, 0x0b, 0x71, 0x77, 0x22, 0xc8, 0xd2, 0xff, 0x02, 0x5d, 0xe9, 0x92 } }; 
 
 	static constexpr const char *GENESIS_TX =
-		"";
-	static constexpr uint32_t GENESIS_NONCE = 0;
+		"023c01ff0001808098d0daf1d00f028be379aa57a70fa19c0ee5765fdc3d2aae0b1034158f4963e157d9042c24fbec21013402fc7071230f1f86f33099119105a7b1f64a898526060ab871e685059c223100";
+	static constexpr uint32_t GENESIS_NONCE = 10001;
 	
 	////////////////////// Dev fund constants
 	// How ofen do we add the dev reward
@@ -329,7 +328,7 @@ struct config<STAGENET>
 
 	static constexpr const char *GENESIS_TX =
 		"";
-	static constexpr uint32_t GENESIS_NONCE = 0;
+	static constexpr uint32_t GENESIS_NONCE = 10002;
 	
 	////////////////////// Dev fund constants
 	// How ofen do we add the dev reward
