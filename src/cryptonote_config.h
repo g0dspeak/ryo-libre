@@ -266,8 +266,8 @@ struct config<MAINNET>
 	static constexpr boost::uuids::uuid NETWORK_ID = { { 0xcd, 0xac, 0x50, 0x2e, 0xb3, 0x74, 0x8f, 0xf2, 0x0f, 0xb7, 0x72, 0x18, 0x0f, 0x73, 0x24, 0x13 } }; 
 
 	static constexpr const char *GENESIS_TX =
-		"023c01ff0001808098d0daf1d00f028be379aa57a70fa19c0ee5765fdc3d2aae0b1034158f4963e157d9042c24fbec21013402fc7071230f1f86f33099119105a7b1f64a898526060ab871e685059c223100";
-	static constexpr uint32_t GENESIS_NONCE = 10000;
+		"";
+	static constexpr uint32_t GENESIS_NONCE = ;
 
 	////////////////////// Dev fund constants
 	// How ofen do we add the dev reward
@@ -297,8 +297,8 @@ struct config<TESTNET>
 	static constexpr boost::uuids::uuid NETWORK_ID = { { 0x6f, 0x81, 0x7d, 0x7e, 0xa2, 0x0b, 0x71, 0x77, 0x22, 0xc8, 0xd2, 0xff, 0x02, 0x5d, 0xe9, 0x92 } }; 
 
 	static constexpr const char *GENESIS_TX =
-		"023c01ff0001808098d0daf1d00f028be379aa57a70fa19c0ee5765fdc3d2aae0b1034158f4963e157d9042c24fbec21013402fc7071230f1f86f33099119105a7b1f64a898526060ab871e685059c223100";
-	static constexpr uint32_t GENESIS_NONCE = 10001;
+		"";
+	static constexpr uint32_t GENESIS_NONCE = ;
 	
 	////////////////////// Dev fund constants
 	// How ofen do we add the dev reward
@@ -329,7 +329,7 @@ struct config<STAGENET>
 
 	static constexpr const char *GENESIS_TX =
 		"";
-	static constexpr uint32_t GENESIS_NONCE = 10002;
+	static constexpr uint32_t GENESIS_NONCE = ;
 	
 	////////////////////// Dev fund constants
 	// How ofen do we add the dev reward
