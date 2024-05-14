@@ -325,7 +325,7 @@ struct config<STAGENET>
 	static constexpr boost::uuids::uuid NETWORK_ID = { { 0x15, 0x77, 0x3a, 0x26, 0x42, 0xa0, 0x3f, 0xf3, 0xe5, 0x79, 0x72, 0x8d, 0x4e, 0x5a, 0xf2, 0x98 } }; 
 
 	static constexpr const char *GENESIS_TX =
-		"013c01ff0001ffffffffffff0302df5d56da0c7d643ddd1ce61901c7bdc5fb1738bfe39fbe69c28a3a7032729c0f2101168d0c4ca86fb55a4cf6a36d31431be1c53a3bd7411bb24e8832410289fa6f3b";
+		"";
 	static constexpr uint32_t GENESIS_NONCE = 10002;
 	
 	////////////////////// Dev fund constants
