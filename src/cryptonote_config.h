@@ -155,7 +155,7 @@ struct hardfork_conf
 };
 
 static constexpr hardfork_conf FORK_CONFIG[] = {
-	/*{FORK_POW_CN_HEAVY, 3, 3, 1},
+	{FORK_POW_CN_HEAVY, 3, 3, 1},
 	{FORK_POW_CN_GPU, 6, 9, 1},
 	{FORK_V2_DIFFICULTY, 2, 2, 1},
 	{FORK_V3_DIFFICULTY, 4, 4, 1},
@@ -171,7 +171,7 @@ static constexpr hardfork_conf FORK_CONFIG[] = {
 	{FORK_BULLETPROOFS_REQ, 7, 9, 1},
 	{FORK_UNIFORM_IDS, 6, 7, 1},
 	{FORK_UNIFORM_IDS_REQ, 7, 8, 1}
-	*/
+	
 };
 
 // COIN - number of smallest units in one coin
