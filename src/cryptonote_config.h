@@ -227,9 +227,9 @@ struct common_config
 
 	///////////////// Dev fund constants
 	// 2 out of 3 multisig address held by fireice, mosu, and psychocrypt
-	//static constexpr const char* DEV_FUND_ADDRESS = "RYoLsiXYpuuDdf4dGNbrbZhfVYNjFTMf9CWCRwxykHx6Ahtaw5Vn5uyC59j1FqG8woi8NhBi8rNbdRmD3L81hBgMUB8ckv4t1JM";
+	static constexpr const char* DEV_FUND_ADDRESS = "RYoLsiXYpuuDdf4dGNbrbZhfVYNjFTMf9CWCRwxykHx6Ahtaw5Vn5uyC59j1FqG8woi8NhBi8rNbdRmD3L81hBgMUB8ckv4t1JM";
 	// 34d6b7155d99da44c3a73424c60ecb0da53d228ed8da026df00ed275ea54e803
-	//static constexpr const char* DEV_FUND_VIEWKEY = "8ae303b001aff92ed3c5cc8d499c82c5b58d3a4e6f9f7212808e616d5076850a";
+	static constexpr const char* DEV_FUND_VIEWKEY = "\x34\xd6\xb7\x15\x5d\x99\xda\x44\xc3\xa7\x34\x24\xc6\x0e\xcb\x0d\xa5\x3d\x22\x8e\xd8\xda\x02\x6d\xf0\x0e\xd2\x75\xea\x54\xe8\x03";
 	// Exact number of coins burned in the premine burn, in atomic units
 	static constexpr uint64_t PREMINE_BURN_AMOUNT = 1;
 	// Ryo donation address
