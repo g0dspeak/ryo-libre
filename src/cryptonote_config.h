@@ -233,7 +233,7 @@ struct common_config
 	// Exact number of coins burned in the premine burn, in atomic units
 	static constexpr uint64_t PREMINE_BURN_AMOUNT = 1;
 	// Ryo donation address
-	//static constexpr const char* RYO_DONATION_ADDR = "RYoLsiXYpuuDdf4dGNbrbZhfVYNjFTMf9CWCRwxykHx6Ahtaw5Vn5uyC59j1FqG8woi8NhBi8rNbdRmD3L81hBgMUB8ckv4t1JM";
+	static constexpr const char* RYO_DONATION_ADDR = "RYoLsiXYpuuDdf4dGNbrbZhfVYNjFTMf9CWCRwxykHx6Ahtaw5Vn5uyC59j1FqG8woi8NhBi8rNbdRmD3L81hBgMUB8ckv4t1JM";
 };
 
 template <network_type type>
