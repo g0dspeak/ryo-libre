@@ -267,7 +267,7 @@ struct config<MAINNET>
 
 	static constexpr const char *GENESIS_TX =
 		"";
-	static constexpr uint32_t GENESIS_NONCE = ;
+	static constexpr uint32_t GENESIS_NONCE = 0;
 
 	////////////////////// Dev fund constants
 	// How ofen do we add the dev reward
@@ -298,7 +298,7 @@ struct config<TESTNET>
 
 	static constexpr const char *GENESIS_TX =
 		"";
-	static constexpr uint32_t GENESIS_NONCE = ;
+	static constexpr uint32_t GENESIS_NONCE = 0;
 	
 	////////////////////// Dev fund constants
 	// How ofen do we add the dev reward
@@ -329,7 +329,7 @@ struct config<STAGENET>
 
 	static constexpr const char *GENESIS_TX =
 		"";
-	static constexpr uint32_t GENESIS_NONCE = ;
+	static constexpr uint32_t GENESIS_NONCE = 0;
 	
 	////////////////////// Dev fund constants
 	// How ofen do we add the dev reward
