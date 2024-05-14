@@ -303,22 +303,22 @@ bool Blockchain::init(BlockchainDB *db, const network_type nettype, bool offline
 	CRITICAL_REGION_LOCAL(m_tx_pool);
 	CRITICAL_REGION_LOCAL1(m_blockchain_lock);
 
-	//memcpy(m_dev_view_key.data, common_config::DEV_FUND_VIEWKEY, 32);
+	memcpy(m_dev_view_key.data, common_config::DEV_FUND_VIEWKEY, 32);
 	
-	//address_parse_info dev_addr;
-	//if(!get_account_address_from_str<MAINNET>(dev_addr, std::string(common_config::DEV_FUND_ADDRESS)))
-	//{
-	//	LOG_ERROR("Failed to parse dev address");
-	//	return false;
+	address_parse_info dev_addr;
+	if(!get_account_address_from_str<MAINNET>(dev_addr, std::string(common_config::DEV_FUND_ADDRESS)))
+	{
+		LOG_ERROR("Failed to parse dev address");
+		return false;
 	}
 
-	//m_dev_spend_key = dev_addr.address.m_spend_public_key;
-	//crypto::public_key vk;
-	//if(!secret_key_to_public_key(m_dev_view_key, vk) || vk != dev_addr.address.m_view_public_key)
-	//{
-		//LOG_ERROR("Dev private view key failed verification!");
-	//	return false;
-	//}
+	m_dev_spend_key = dev_addr.address.m_spend_public_key;
+	crypto::public_key vk;
+	if(!secret_key_to_public_key(m_dev_view_key, vk) || vk != dev_addr.address.m_view_public_key)
+	{
+		LOG_ERROR("Dev private view key failed verification!");
+		return false;
+	}
 
 	if(db == nullptr)
 	{
